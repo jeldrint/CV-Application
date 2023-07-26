@@ -1,0 +1,73 @@
+html, body {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    height: 100%;
+    font-size: 21px;
+
+}
+
+button {
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+input {
+    /*Adjusting size to the size of parent div*/
+    width: 100%;
+    height: 100%;
+
+    font-size: 16px;
+    border: solid 1px rgba(33, 33, 33, 0.3);
+    border-radius: 3px;
+    padding: 1px 3px;
+}
+
+textarea{
+    /*Adjusting size to the size of parent div*/
+    width: 100%;
+    min-height: 100px;
+
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    resize: none;
+
+    border: solid 1px rgba(33, 33, 33, 0.3);
+    border-radius: 3px;
+    padding: 1px 3px;
+}
+
+.container {
+    margin: 50px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    column-gap: 20px;
+}
+
+.container > * {
+    border: solid 1px;
+    padding: 10px;
+}
+
+
+.add-exp {
+    display: flex;
+    align-items: center;
+}
+
+.add-exp > *{
+    cursor: pointer;
+}
+
+
+/****INPUT CONTAINER CSS****/
+
+.input-area{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.input-column {
+    display: flex;
+    column-gap: 10px;
+}

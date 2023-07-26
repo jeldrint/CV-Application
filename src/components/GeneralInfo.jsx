@@ -6,7 +6,7 @@ export default function GeneralInfo (props) {
     }
 
     return (
-    <>
+    <div className="input-area">
         <div className="input-column">
             <input type='text' placeholder="First Name..." />
             <input type='text' placeholder="Last Name..." />
@@ -23,6 +23,6 @@ export default function GeneralInfo (props) {
             <textarea type='text' placeholder="Description"></textarea>
         </div>
         <button onClick={handleChange}>Submit</button>    
-    </>
+    </div>
     )
 }

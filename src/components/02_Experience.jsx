@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Icon1 from '../images/add.png'
 
-export default function EducExp (props) {
+export default function Experience (props) {
     const [changeToInput, setChangeToInput] = useState(false);
 
     const handleChange = (e) => {
@@ -18,7 +18,6 @@ export default function EducExp (props) {
 
     return (
     <>
-
         <div className="add-exp" id={props.educExp ? 'add-school' : 'add-work'} onClick={handleClickAdd} style={{display: changeToInput ? 'none' : 'flex'}}>
             <img src={Icon1} style={{height: '35px'}}/>
             <div style={{fontSize:'16px'}}>{props.educExp ? 'Add School' : 'Add Work'}</div>
@@ -37,9 +36,9 @@ export default function EducExp (props) {
             <textarea type='text' placeholder='Give some details / description of your job' /> 
             : '' }
             <div className="input-column">
-                <label for='year-start' style={{fontSize:'14px'}}>Year Started: </label>
+                <label htmlFor='year-start' style={{fontSize:'14px'}}>Year Started: </label>
                 <input id='year-start' type='date' style={{width: '20%', fontSize: '12px'}} />
-                <label for='year-end' style={{fontSize:'14px'}}>Year Ended: </label>
+                <label htmlFor='year-end' style={{fontSize:'14px'}}>Year Ended: </label>
                 <input id='year-end' type='date' style={{width: '20%', fontSize: '12px'}} />
             </div>
 

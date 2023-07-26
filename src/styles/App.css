@@ -57,7 +57,7 @@ textarea{
     margin: 50px 30px;
 
     display: grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 1fr 800px;
     column-gap: 20px;
 }
 
@@ -90,5 +90,15 @@ textarea{
     column-gap: 10px;
 }
 
-
 /****OUTPUT CONTAINER CSS****/
+.output-header{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.contact-details{
+    display: flex;
+    flex-direction: column;
+}

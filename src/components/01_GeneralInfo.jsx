@@ -16,7 +16,7 @@ export default function GeneralInfo (props) {
             <input type='email' placeholder="E-mail Address" />
         </div>
         <div className="input-column">
-            <input type='tel' placeholder="Phone Number" />
+            <input type='tel' placeholder="Phone No." style={{width: '35%'}}/>
             <input type='text' placeholder="Address / Location" />
         </div>
         <div className="input-column">

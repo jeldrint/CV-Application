@@ -7,10 +7,14 @@ import CVOutput from './components/03_CVOutput'
 const App = () => {
   const [genInfo, setGenInfo] = useState({firstName: '', lastName: '', job: '', email: '', phoneNum: '', location: '', desc: ''})
   const [genInfoOut, setGenInfoOut] = useState({firstName: '', lastName: '', job: '', email: '', phoneNum: '', location: '', desc: ''})
-  const [educExp, setEducExp] = useState({school: '', course: '',  address: '', yrStart: '', yrEnd: ''})
-  const [educExpOut, setEducExpOut] = useState({school: '', course: '',  address: '', yrStart: '', yrEnd: ''})
+  const [educExp, setEducExp] = useState([{school: '', course: '',  address: '', yrStart: '', yrEnd: ''}]);
+  const [educExpOut, setEducExpOut] = useState([]);
   const [workExp, setWorkExp] = useState([{jobTitle: '', company: '', address: '',  yrStart: '', yrEnd: '', desc: ''}])
-  const [workExpOut, setWorkExpOut] = useState([])
+  const [workExpOut, setWorkExpOut] = useState([]);
+
+  const generatePDF = (e) => {
+    e.preventDefault();
+  }
 
   return (
     <>
@@ -26,9 +30,10 @@ const App = () => {
             <legend>Educational Experience</legend>
             <Experience educExp={educExp} setEducExp={setEducExp} setEducExpOut={setEducExpOut} />
             <hr />
+            <button onClick={generatePDF} className='pdf-btn'>Save as PDF</button>
           </form>
           <section className='output-container'>
-            <CVOutput genInfoOut={genInfoOut} educExpOut={educExpOut} workExpOut={workExpOut} setEducExpOut={setEducExpOut} setWorkExpOut={setWorkExpOut}/>
+            <CVOutput genInfoOut={genInfoOut} educExpOut={educExpOut} workExpOut={workExpOut} setEducExpOut={setEducExpOut} setWorkExpOut={setWorkExpOut} />
           </section>
         </main>
         <footer className='footer' style={{fontSize:'14px'}}>2023 {String.fromCharCode(169)} jeldrint | Icons by{' '}

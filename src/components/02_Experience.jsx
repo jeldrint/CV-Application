@@ -64,11 +64,10 @@ export default function Experience (props) {
             yrStart: props.workExp.yrStart, yrEnd: props.workExp.yrEnd, desc: props.workExp.desc }])
         }
         if (props.educExp){
-            props.setEducExpOut(props.educExp)
+            props.setEducExpOut(prev=>[...prev,{school: props.educExp.school, course: props.educExp.course, address: props.educExp.address,
+                yrStart: props.educExp.yrStart, yrEnd: props.educExp.yrEnd}])
         }
-
     }
-
 
     return (
     <>
@@ -91,9 +90,9 @@ export default function Experience (props) {
             : '' }
             <div className="input-column">
                 <label htmlFor='year-start' style={{fontSize:'14px'}}>Year Started: </label>
-                <input id='year-start' name='yr-start' type='date' style={{width: '20%', fontSize: '12px'}} onChange={handleChange} />
+                <input id='year-start' name='yr-start' type='date' style={{width: '23%', fontSize: '12px'}} onChange={handleChange} />
                 <label htmlFor='year-end' style={{fontSize:'14px'}}>Year Ended: </label>
-                <input id='year-end' name='yr-end' type='date' style={{width: '20%', fontSize: '12px'}} onChange={handleChange} />
+                <input id='year-end' name='yr-end' type='date' style={{width: '23%', fontSize: '12px'}} onChange={handleChange} />
             </div>
 
             <button onClick={handleSubmit}>Submit</button>            

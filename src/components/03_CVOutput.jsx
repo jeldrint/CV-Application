@@ -9,12 +9,17 @@ export default function CVOutput (props) {
     },[props.workExpOut])
 
     const handleRemoveWorkExp = (e) => {
-        props.setWorkExpOut(details=>
-            details.filter((item,index)=>e.target.parentNode.id != index)
-        )
+        if(e.target.parentNode.parentNode.className === 'output-work-exp'){
+            props.setWorkExpOut(details=>
+                details.filter((item,index)=>e.target.parentNode.id != index)
+            )
+        }
+        if(e.target.parentNode.parentNode.className === 'output-educ-exp'){
+            props.setEducExpOut(details=>
+                details.filter((item,index)=>e.target.parentNode.id != index)
+            )
+        }
     }
-
-
     return(
         <>
             <div className='output-header'>
@@ -41,6 +46,8 @@ export default function CVOutput (props) {
                     </div>
                 </div>
             </div>
+            <div className='output-header-description'>{props.genInfoOut.desc}</div>
+
             <hr />
             <div className='output-work-exp'>
                 <span style={{fontFamily:'Varela Round', fontSize: '21px', fontWeight:'400'}}>Work Experience</span>
@@ -62,13 +69,20 @@ export default function CVOutput (props) {
             <hr />
             <div className='output-educ-exp'>
                 <span style={{fontFamily:'Varela Round', fontSize: '21px', fontWeight:'400'}}>Educational Background</span>
-                <ul>
-                    <li>{props.educExpOut.school}</li>
-                    <li>{props.educExpOut.course}</li>
-                    <li>{props.educExpOut.address}</li>
-                    <li>{props.educExpOut.yrStart}</li>
-                    <li>{props.educExpOut.yrEnd}</li>
-                </ul>
+                    {props.educExpOut.map((educItem,index)=>
+                        <>
+                            <ul className='work-exp-ul' key={index} id={index}>
+                                <button className='remove-btn' onClick={handleRemoveWorkExp}>Remove</button>
+                                <div>
+                                    <li style={{fontSize:'18px', fontWeight:'700', listStyleType:'none'}}>{educItem.school} ({educItem.yrStart} to {educItem.yrEnd})</li>
+                                    <li style={{fontSize:'16px', fontWeight:'400', listStyleType:'none'}}>{educItem.course}</li>
+                                    <ul style={{fontSize: '14px'}}>
+                                        <li>Address: {educItem.address}</li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </>
+                    )}
             </div>
         </>
     )

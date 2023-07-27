@@ -20,15 +20,15 @@ const App = () => {
             <legend>General Information</legend>
             <GeneralInfo genInfo={genInfo} setGenInfo={setGenInfo} setGenInfoOut={setGenInfoOut} />
             <hr />
-            <legend>Educational Experience</legend>
-            <Experience educExp={educExp} setEducExp={setEducExp} />
+            <legend>Previous Work Experience</legend>
+            <Experience workExp={workExp} setWorkExp={setWorkExp} setWorkExpOut={setWorkExpOut} />
             <hr />
-            <legend>Work Experience</legend>
-            <Experience workExp={workExp} setWorkExp={setWorkExp} />
+            <legend>Educational Experience</legend>
+            <Experience educExp={educExp} setEducExp={setEducExp} setEducExpOut={setEducExpOut} />
             <hr />
           </form>
           <section className='output-container'>
-            <CVOutput genInfoOut={genInfoOut}/>
+            <CVOutput genInfoOut={genInfoOut} educExpOut={educExpOut} workExpOut={workExpOut} />
           </section>
         </main>
         <footer className='footer'>2023 {String.fromCharCode(169)} jeldrint | Icons by{' '}

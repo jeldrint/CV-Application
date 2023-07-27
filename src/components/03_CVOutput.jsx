@@ -16,22 +16,42 @@ export default function CVOutput (props) {
                 </div>
                 <div className='contact-details'>
                     <div style={{display:'flex', alignItems:'center', justifyContent:'flex-end', columnGap:'2px'}}>
-                        <span style={{fontSize:'10px'}}>{props.genInfoOut.email}</span>                
+                        <span style={{fontSize:'10px', textAlign:'right'}}>{props.genInfoOut.email}</span>                
                         <img src={Icon1} style={{width:'20px'}}/>
                     </div>
                     <div style={{display:'flex', alignItems:'center', justifyContent:'flex-end', columnGap:'2px'}}>
-                        <span style={{fontSize:'10px'}}>{props.genInfoOut.phoneNum}</span>                
+                        <span style={{fontSize:'10px', textAlign:'right'}}>{props.genInfoOut.phoneNum}</span>                
                         <img src={Icon2} style={{width:'20px'}} />
                     </div>
                     <div style={{display:'flex', alignItems:'center', justifyContent:'flex-end', columnGap:'2px'}}>
-                        <span style={{fontSize:'10px'}}>{props.genInfoOut.location}</span>                
+                        <span style={{fontSize:'10px', textAlign:'right'}}>{props.genInfoOut.location}</span>                
                         <img src={Icon3} style={{width:'20px'}} />
                     </div>
                 </div>
             </div>
             <hr />
-            <p>{props.genInfoOut.desc}</p>
-        
+            <div className='output-work-exp'>
+                <span style={{fontFamily:'Varela Round', fontSize: '21px', fontWeight:'400'}}>Work Experience</span>
+                <ul>
+                    <li>{props.workExpOut.jobTitle}</li>
+                    <li>{props.workExpOut.company}</li>
+                    <li>{props.workExpOut.address}</li>
+                    <li>{props.workExpOut.yrStart}</li>
+                    <li>{props.workExpOut.yrEnd}</li>
+                    <li>{props.workExpOut.desc}</li>
+                </ul>
+            </div>
+            <hr />
+            <div className='output-educ-exp'>
+                <span style={{fontFamily:'Varela Round', fontSize: '21px', fontWeight:'400'}}>Educational Background</span>
+                <ul>
+                    <li>{props.educExpOut.school}</li>
+                    <li>{props.educExpOut.course}</li>
+                    <li>{props.educExpOut.address}</li>
+                    <li>{props.educExpOut.yrStart}</li>
+                    <li>{props.educExpOut.yrEnd}</li>
+                </ul>
+            </div>
         </>
     )
 }

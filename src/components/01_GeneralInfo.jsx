@@ -41,15 +41,15 @@ export default function GeneralInfo ({genInfo, setGenInfo, setGenInfoOut}) {
             <input type='text' name='lastName' placeholder="Last Name..."  onChange={handleChange} />
         </div>
         <div className="input-column">
-            <input type='text' name='job' placeholder="Position / Job applying for?" value={genInfo.job} onChange={handleChange} />
-            <input type='email'  name='email' placeholder="E-mail Address"  value={genInfo.email} onChange={handleChange} />
+            <input type='text' name='job' placeholder="Position / Job applying for?" onChange={handleChange} />
+            <input type='email'  name='email' placeholder="E-mail Address" onChange={handleChange} />
         </div>
         <div className="input-column">
-            <input type='tel' name='phoneNum' placeholder="Phone No." style={{width: '35%'}} value={genInfo.phoneNum} onChange={handleChange} />
-            <input type='text' name='location' placeholder="Address / Location" value={genInfo.location} onChange={handleChange}/>
+            <input type='tel' name='phoneNum' placeholder="Phone No." style={{width: '35%'}} onChange={handleChange} />
+            <input type='text' name='location' placeholder="Address / Location" onChange={handleChange}/>
         </div>
         <div className="input-column">
-            <textarea type='text' name='desc' placeholder="Description" value={genInfo.desc} onChange={handleChange}></textarea>
+            <textarea type='text' name='desc' placeholder="Description" onChange={handleChange}></textarea>
         </div>
         <button onClick={handleSubmit}>Submit</button>
     </div>

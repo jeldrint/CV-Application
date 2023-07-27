@@ -1,8 +1,20 @@
 import Icon1 from '../images/mail.png'
 import Icon2 from '../images/phone.png'
 import Icon3 from '../images/location.png'
+import { useEffect, useState } from 'react'
 
 export default function CVOutput (props) {
+    useEffect(()=>{
+        //console.log(props.workExpOut)
+    },[props.workExpOut])
+
+    const handleRemoveWorkExp = (e) => {
+        props.setWorkExpOut(details=>
+            details.filter((item,index)=>e.target.parentNode.id != index)
+        )
+    }
+
+
     return(
         <>
             <div className='output-header'>
@@ -32,14 +44,20 @@ export default function CVOutput (props) {
             <hr />
             <div className='output-work-exp'>
                 <span style={{fontFamily:'Varela Round', fontSize: '21px', fontWeight:'400'}}>Work Experience</span>
-                <ul>
-                    <li>{props.workExpOut.jobTitle}</li>
-                    <li>{props.workExpOut.company}</li>
-                    <li>{props.workExpOut.address}</li>
-                    <li>{props.workExpOut.yrStart}</li>
-                    <li>{props.workExpOut.yrEnd}</li>
-                    <li>{props.workExpOut.desc}</li>
-                </ul>
+                    {props.workExpOut.map((workItem,index)=>
+                        <>
+                            <ul className='work-exp-ul' key={index} id={index}>
+                                <button className='remove-btn' onClick={handleRemoveWorkExp}>Remove</button>
+                                <div>
+                                    <li style={{fontSize:'18px', fontWeight:'700', listStyleType:'none'}}>{workItem.jobTitle} ({workItem.yrStart} to {workItem.yrEnd})</li>
+                                    <li style={{fontSize:'16px', fontWeight:'400', listStyleType:'none'}}>{workItem.address}</li>
+                                    <ul style={{fontSize: '14px'}}>
+                                        <li>{workItem.desc}</li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </>
+                    )}
             </div>
             <hr />
             <div className='output-educ-exp'>

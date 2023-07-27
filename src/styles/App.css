@@ -102,3 +102,31 @@ textarea{
     display: flex;
     flex-direction: column;
 }
+
+.output-work-exp{
+    display: grid;
+    row-gap: 10px;
+}
+
+.work-exp-ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.remove-btn{
+    cursor: pointer;
+    background-color:crimson;
+    color: aliceblue;
+    border: none;
+    padding: 20px 5px;
+    border-radius: 5px;
+    align-self: center;
+    
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.remove-btn:hover{
+    opacity: 1;
+}

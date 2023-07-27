@@ -7,10 +7,10 @@ import CVOutput from './components/03_CVOutput'
 const App = () => {
   const [genInfo, setGenInfo] = useState({firstName: '', lastName: '', job: '', email: '', phoneNum: '', location: '', desc: ''})
   const [genInfoOut, setGenInfoOut] = useState({firstName: '', lastName: '', job: '', email: '', phoneNum: '', location: '', desc: ''})
-  const [educExp, setEducExp] = useState({school: '', course: '',  address: '', yrStart: '', yrEnd: '',})
-  const [educExpOut, setEducExpOut] = useState({school: '', course: '',  address: '', yrStart: '', yrEnd: '',})
-  const [workExp, setWorkExp] = useState({jobTitle: '', company: '', address: '',  yrStart: '', yrEnd: '', desc: ''})
-  const [workExpOut, setWorkExpOut] = useState({jobTitle: '', company: '', address: '',  yrStart: '', yrEnd: '', desc: ''})
+  const [educExp, setEducExp] = useState({school: '', course: '',  address: '', yrStart: '', yrEnd: ''})
+  const [educExpOut, setEducExpOut] = useState({school: '', course: '',  address: '', yrStart: '', yrEnd: ''})
+  const [workExp, setWorkExp] = useState([{jobTitle: '', company: '', address: '',  yrStart: '', yrEnd: '', desc: ''}])
+  const [workExpOut, setWorkExpOut] = useState([])
 
   return (
     <>
@@ -28,10 +28,10 @@ const App = () => {
             <hr />
           </form>
           <section className='output-container'>
-            <CVOutput genInfoOut={genInfoOut} educExpOut={educExpOut} workExpOut={workExpOut} />
+            <CVOutput genInfoOut={genInfoOut} educExpOut={educExpOut} workExpOut={workExpOut} setEducExpOut={setEducExpOut} setWorkExpOut={setWorkExpOut}/>
           </section>
         </main>
-        <footer className='footer'>2023 {String.fromCharCode(169)} jeldrint | Icons by{' '}
+        <footer className='footer' style={{fontSize:'14px'}}>2023 {String.fromCharCode(169)} jeldrint | Icons by{' '}
           <a href='https://icons8.com/' target='_blank'>Icons8</a>
         </footer>    
       </div>

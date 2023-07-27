@@ -60,11 +60,13 @@ export default function Experience (props) {
         setChangeToInput(false);
 
         if (props.workExp){
-            props.setWorkExpOut(props.workExp)
+            props.setWorkExpOut(prev=>[...prev,{jobTitle: props.workExp.jobTitle, company: props.workExp.company, address: props.workExp.address,
+            yrStart: props.workExp.yrStart, yrEnd: props.workExp.yrEnd, desc: props.workExp.desc }])
         }
         if (props.educExp){
             props.setEducExpOut(props.educExp)
         }
+
     }
 
 
